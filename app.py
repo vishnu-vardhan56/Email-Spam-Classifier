@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 import pickle
 import string
 import nltk
@@ -27,9 +28,11 @@ def transform_text(text):
     for i in text:
         out.append(ps.stem(i))
     return " ".join(out)
-    
-tfidf = pickle.load(open('vectorizer.pkl','rb'))
-model = pickle.load(open('model.pkl','rb'))
+
+tfidf = pd.read_pickle("vectorizer.pkl")
+model = pd.read_pickle("model.pkl")
+#tfidf = pickle.load(open('vectorizer.pkl','rb'))
+#model = pickle.load(open('model.pkl','rb'))
 
 st.title("Email/SMS Spam Classifier")
 
