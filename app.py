@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import sklearn
+#import sklearn
 #import pickle
 import string
 import nltk
